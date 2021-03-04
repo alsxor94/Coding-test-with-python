@@ -15,15 +15,19 @@
 import time
 import random
 import numpy as np
-# N = random.randrange(2, 1000)#making N number of list
-# M = random.randrange(2, 10000)#adding number Mth
-# K = random.randrange(2, 10000)#maximum number of adding counts of each index number
 
 start_time = time.time()
-N = random.randint(2, 5)#making N number of list
+
+N = random.randrange(2, 1000)#making N number of list
 N_arr = np.empty(N)
-M = random.randint(2, 10)#adding number Mth
-K = random.randint(2, M)#maximum number of adding counts of each index number
+M = random.randrange(2, 10000)#adding number Mth
+K = random.randrange(2, 10000)#maximum number of adding counts of each index number
+
+
+# N = random.randint(2, 5)#making N number of list
+# N_arr = np.empty(N)
+# M = random.randint(2, 10)#adding number Mth
+# K = random.randint(2, M)#maximum number of adding counts of each index number
 #top2까지만 구하고, top1*K+top2+... 이런식으로 계산하면됨.
 
 # 1. define N, M, K by random.randint
