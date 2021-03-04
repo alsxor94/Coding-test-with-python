@@ -36,7 +36,7 @@ K = random.randrange(2, 10000)#maximum number of adding counts of each index num
 # 4. if the max number is one, then find top2, making a equation.
 
 for i in range(N):
-    a = random.randint(2, 5)
+    a = random.randint(2, 1000)#연습할땐, 1000말고 적은걸로 바꾸기
     N_arr[i] = a
 # print(N_arr)
 # print(N, M, K)
