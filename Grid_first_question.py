@@ -48,7 +48,7 @@ top_1_index = np.where(top_1 == N_arr)[0]
 
 top_1 = np.max(N_arr)
 top_1_index = np.where(top_1 == N_arr)[0]
-# print(len(top_1_index))
+# print(top_1, len(top_1_index))
 # print(top_1_index)
 
 if len(top_1_index) > 1:
