@@ -16,3 +16,14 @@ result += count * first # add max number
 result += (m - count) * second
 
 print(result)
+
+# Syntax :
+
+# map(fun, iter)
+# list(map(fun,list))
+# tuple(map(fun, tuple))
+
+# Parameters :
+
+# fun : It is a function to which map passes each element of given iterable.
+# iter : It is a iterable which is to be mapped.
