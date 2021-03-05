@@ -51,3 +51,5 @@ print(summa)
 
 end = time.time()
 print(end - start)
+
+#인풋을 한 번에 받는 방법을 몰랐음
