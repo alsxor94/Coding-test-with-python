@@ -16,7 +16,7 @@ for i in range(n):
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
 
-# 왼쪽으로 회전
+# 왼쪽으로 회전?
 def turn_left():
     global direction
     direction -= 1
