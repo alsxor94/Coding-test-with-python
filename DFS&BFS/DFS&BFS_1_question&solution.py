@@ -5,7 +5,7 @@ def dfs(graph, v, visited):
     print(v, end=' ')
     # 현재 노드와 연결된 다른 노드를 재귀적으로 방문
     for i in graph[v]:
-        if not visited[i]:
+        if not visited[i]:#not visited만 다시 돌기 때문에, 결국엔 visited된 node만 print됌.
             dfs(graph, i, visited)
 
 # 각 노드가 연결된 정보를 리스트 자료형으로 표현(2차원 리스트)
