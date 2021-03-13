@@ -51,3 +51,4 @@ for i in range(row):
 
 print(graph)
 print(cnt)
+### 런타임 에러 (RecursionError) 뜸
