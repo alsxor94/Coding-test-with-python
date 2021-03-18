@@ -66,3 +66,33 @@ KGF
 7
 # if you look at the output, at the turning point 
 # so when you the function start, the state should start with present state.
+
+
+# this version has run time over error.
+from sys import stdin, setrecursionlimit
+setrecursionlimit(10000)
+def bt(r, c, trace):
+    global result
+    check = 0
+    for i in range(4):
+        nx = c + dx[i]
+        ny = r + dy[i]
+        if 0 <= ny < row and 0 <= nx < column and not graph[ny][nx] in trace:
+            bt(ny, nx, trace + graph[ny][nx])
+        else:
+            check += 1
+    if check == 4:
+        result = max(len(trace), result)
+
+row, column = list(map(int, stdin.readline().split()))
+graph = []
+for i in range(row):
+    graph.append(list(map(str, stdin.readline()))[:-1])
+
+trace = graph[0][0]
+dx = [1, -1, 0, 0]
+dy = [0, 0, -1, 1]
+result = 0
+
+bt(0, 0, trace)
+print(result)
