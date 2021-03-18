@@ -48,3 +48,21 @@ result = 0
 
 back(0,0)
 print(result)
+
+
+3 3
+ABC
+EAF
+KGF
+0 0
+0 1
+0 2
+1 2
+['A', 'B', 'C', 'F']
+1 0
+2 0
+2 1
+['A', 'B', 'C', 'F', 'E', 'K', 'G']
+7
+# if you look at the output, at the turning point 
+# so when you the function start, the state should start with present state.
