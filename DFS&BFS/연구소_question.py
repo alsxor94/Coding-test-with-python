@@ -3,17 +3,15 @@ from itertools import combinations as combi
 from collections import deque
 import copy
 from time import time
-# bfs로 해야할듯? 길이 전부 파악하고, 그 뒤 2 위치 찾아서 거리 가장 가까운 곳에 벽을 세우면 될 듯.
-# --> 논리가 틀림.
+# brute force algorithm을 알았어야함.
 
-# is it useful?
 def find_2(graph):
     for i in range(row):
         for j in range(column):
             if '2' == graph[i][j]:
                 pos_2.append([i, j])
 
-# searching safe area
+# spreading virus
 def bfs(r, c, step):
     queue = deque()
     queue.append((r, c))
@@ -28,8 +26,6 @@ def bfs(r, c, step):
                 step[ny][nx] = '2'
                 queue.append((ny, nx))
 
-# 영역의 개념을 어떻게 구현할 수 있을까? 싸였다라는 개념을 어케 넣지?
-# 어떻게 벽을 세울까? 무슨 논리로?
 # 다른 사람들은 벽을 채울 수 있는 가짓 수를 다 찾아서 함. combination implementation.
 def fence():
     global result
