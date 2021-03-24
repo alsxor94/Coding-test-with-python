@@ -1,4 +1,3 @@
-from sys import stdin
 from itertools import combinations as combi
 from collections import deque
 import copy
@@ -50,13 +49,13 @@ def fence():
 
 
 
-row, column = map(int, stdin.readline().split())
+row, column = map(int, input().split())
 st = time()
 graph = []
 result = 0
 pos_2 = []
 for i in range(row):
-    graph.append(stdin.readline().split())
+    graph.append(input().split())
 
 fence()
 print(result)
