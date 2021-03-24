@@ -24,7 +24,7 @@ def spread():
         check = queue.popleft()
         if type(check) == type(1):
             sec += 1
-            queue.append(check)
+            queue.append(check) #  because of this it never stop
             continue
         y, x = check
         for i in range(4):
