@@ -1,15 +1,15 @@
 from collections import deque
-
+from sys import stdin
 # [1pos, 2pos, ...]
 def find_num():
     for i in range(num_max):
+        # seperate number at the same time, the virus can exist more than 1
+        queue.append(i+1) # seperate 1,2,3, ...
         for row in range(n):
             for col in range(n):
                 if graph[row][col] == '{}'.format(i+1):
-                    # num_pos.append([row, col])
-                    queue.append(i+1)
                     queue.append((row, col))
-                    break
+
 
 
 # bfs, how to divide spread timing?
@@ -18,14 +18,21 @@ def spread():
     dx = [-1, 1, 0, 0]
     dy = [0, 0, -1, 1]
     while queue:
-        if sec //3 == s:
-            print(graph[tar_y - 1][tar_x - 1])
-            break
+        # 원하는 시간에 멈추고 출력
         check = queue.popleft()
         if type(check) == type(1):
             sec += 1
-            queue.append(check) #  because of this it never stop
+            if sec // num_max == s:
+                if graph[tar_y - 1][tar_x - 1] == '0':
+                    print(0)
+                    break
+                else:
+                    print(int(graph[tar_y - 1][tar_x - 1]))
+                    break
+            # seperate num
+            queue.append(check)
             continue
+        # speard
         y, x = check
         for i in range(4):
             nx = x + dx[i]
@@ -33,28 +40,15 @@ def spread():
             if 0 <= nx < n and 0 <= ny < n and graph[ny][nx] == '0':
                 graph[ny][nx] = graph[y][x]
                 queue.append((ny, nx))
-        print(sec)
-        if sec // 3 == s:
-            pass
-            # for i in graph:
-            #     print(i)
-            # print('answer:{}'.format(graph[tar_y - 1][tar_x - 1]))
 
-n, num_max = map(int, input().split())
+n, num_max = map(int, stdin.readline().split())
 graph = []
 for i in range(n):
-    graph.append(input().split())
-s, tar_y, tar_x = map(int, input().split())
-sec = 0
-
-# print(graph)
-# print(s, tar_x, tar_y)
+    graph.append(stdin.readline().split())
+s, tar_y, tar_x = map(int, stdin.readline().split())
+sec = -1
 
 num_pos =[]
 queue = deque()
 find_num()
-# for i in queue:
-#     print(type(i) == type(1))
-#     print(i)
 spread()
-# 시간 초과 및 틀림.
